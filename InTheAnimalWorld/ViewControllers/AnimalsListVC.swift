@@ -25,9 +25,7 @@ class AnimalsListVC: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-//        tableView.estimatedRowHeight = 150
-//        tableView.rowHeight = UITableViewAutomaticDimension
-        
+    
         generateAnimals()
     }
     
@@ -51,17 +49,23 @@ class AnimalsListVC: UIViewController {
             let typeAnimal = animal.species.type
             
             if  var arrayTempAnimals = dataSource[typeAnimal] {
-                
                 arrayTempAnimals.append(animal)
                 dataSource[typeAnimal] = arrayTempAnimals
-            
             } else {
                 dataSource[typeAnimal] = [animal]
                 arrayKeysTypesAnimal.append(typeAnimal)
             }
         }
-        //        FIXME: NOT CORRECT
+        //        FIXME: NOT CORRECT ORDER
        // arrayKeysTypesAnimal = Array(dataSource.keys)
+    }
+    
+    private func getAnimal(for indexPath: IndexPath) -> Animal? {
+        
+        let key = arrayKeysTypesAnimal[indexPath.section]
+        let animalSection = dataSource[key]
+        
+        return animalSection?[indexPath.row]
     }
 }
 
@@ -91,10 +95,9 @@ extension AnimalsListVC: UITableViewDataSource, UITableViewDelegate {
             fatalError("Error: Cell has wrong type")
         }
         
-        let key = arrayKeysTypesAnimal[indexPath.section]
-        let animalSection = dataSource[key] ?? []
-        
-        let animal = animalSection[indexPath.row]
+        guard let animal = getAnimal(for: indexPath) else {
+            fatalError("Error: Data source is empty")
+        }
         
         cell.animalImage.image = animal.image
         cell.animalNameLabel.text = animal.name

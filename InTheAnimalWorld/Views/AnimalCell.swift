@@ -1,4 +1,4 @@
-//
+
 //  AnimalCell.swift
 //  InTheAnimalWorld
 //

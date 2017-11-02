@@ -73,8 +73,8 @@
 		49569AA91FAA703B0014BE07 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				49569AAF1FAA72170014BE07 /* AnimalsDetailsVC.swift */,
 				49765A631FAB65D100F7930B /* AnimalsListVC.swift */,
+				49569AAF1FAA72170014BE07 /* AnimalsDetailsVC.swift */,
 				49569A971FAA689D0014BE07 /* Main.storyboard */,
 			);
 			path = ViewControllers;
