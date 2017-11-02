@@ -14,7 +14,9 @@ class AnimalsListVC: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    private var dataSourses:[Animal] = []
+    private var dataSource:[String : [Animal]] = [:]
+    private var arrayAnimals = [Animal]()
+    private var arrayKeysTypesAnimal = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,20 +31,37 @@ class AnimalsListVC: UIViewController {
         generateAnimals()
     }
     
-    //MARK: Animal
-    
+    //MARK: - Animal
+
     func generateAnimals() {
         
-        dataSourses.append(Animal(type: AnimalType(type:"Bird"), name:"Stork", image:#imageLiteral(resourceName: "Stork")))
-        dataSourses.append(Animal(type: AnimalType(type:"Bird"), name:"Albatross", image:#imageLiteral(resourceName: "Albatross")))
-        dataSourses.append(Animal(type: AnimalType(type:"Bird"), name:"Kolibri", image:#imageLiteral(resourceName: "Kolibri")))
-        dataSourses.append(Animal(type: AnimalType(type:"Bird"), name:"Parrot", image:#imageLiteral(resourceName: "Parrot")))
-        dataSourses.append(Animal(type: AnimalType(type:"Fish"), name:"Carp", image:#imageLiteral(resourceName: "Сarp")))
-        dataSourses.append(Animal(type: AnimalType(type:"Fish"), name:"Som", image:#imageLiteral(resourceName: "Som")))
-        dataSourses.append(Animal(type: AnimalType(type:"Insect"), name:"Hornet", image:#imageLiteral(resourceName: "Hornet")))
-        dataSourses.append(Animal(type: AnimalType(type:"Beast"), name:"Lion", image:#imageLiteral(resourceName: "Lion")))
-        dataSourses.append(Animal(type: AnimalType(type:"Beast"), name:"Bear", image:#imageLiteral(resourceName: "Bear")))
-        dataSourses.append(Animal(type: AnimalType(type:"Beast"), name:"Hare", image:#imageLiteral(resourceName: "Hare")))
+        arrayAnimals.append(Animal(species: AnimalType(type:"Bird"), name:"Stork", image:#imageLiteral(resourceName: "Stork")))
+        arrayAnimals.append(Animal(species: AnimalType(type:"Bird"), name:"Albatross", image:#imageLiteral(resourceName: "Albatross")))
+        arrayAnimals.append(Animal(species: AnimalType(type:"Bird"), name:"Kolibri", image:#imageLiteral(resourceName: "Kolibri")))
+        arrayAnimals.append(Animal(species: AnimalType(type:"Bird"), name:"Parrot", image:#imageLiteral(resourceName: "Parrot")))
+        arrayAnimals.append(Animal(species: AnimalType(type:"Fish"), name:"Carp", image:#imageLiteral(resourceName: "Сarp")))
+        arrayAnimals.append(Animal(species: AnimalType(type:"Fish"), name:"Som", image:#imageLiteral(resourceName: "Som")))
+        arrayAnimals.append(Animal(species: AnimalType(type:"Insect"), name:"Hornet", image:#imageLiteral(resourceName: "Hornet")))
+        arrayAnimals.append(Animal(species: AnimalType(type:"Beast"), name:"Lion", image:#imageLiteral(resourceName: "Lion")))
+        arrayAnimals.append(Animal(species: AnimalType(type:"Beast"), name:"Bear", image:#imageLiteral(resourceName: "Bear")))
+        arrayAnimals.append(Animal(species: AnimalType(type:"Beast"), name:"Hare", image:#imageLiteral(resourceName: "Hare")))
+        
+        for animal in arrayAnimals {
+            
+            let typeAnimal = animal.species.type
+            
+            var arrayTempAnimals = dataSource[typeAnimal] ?? []
+            arrayTempAnimals.append(animal)
+            dataSource[typeAnimal] = arrayTempAnimals
+
+            if arrayKeysTypesAnimal.contains(typeAnimal) {
+                continue
+            } else {
+                arrayKeysTypesAnimal.append(typeAnimal)
+            }
+        }
+        //        FIXME: NOT CORRECT
+       // arrayKeysTypesAnimal = Array(dataSource.keys)
     }
 }
 
@@ -50,8 +69,20 @@ extension AnimalsListVC: UITableViewDataSource, UITableViewDelegate {
     
     //MARK: UITableViewDataSource
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dataSource.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSourses.count
+        
+        let key = arrayKeysTypesAnimal[section]
+        let animalSection = dataSource[key] ?? []
+        
+        return animalSection.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return arrayKeysTypesAnimal[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,7 +91,10 @@ extension AnimalsListVC: UITableViewDataSource, UITableViewDelegate {
             fatalError("Error: Cell has wrong type")
         }
         
-        let animal = dataSourses[indexPath.row]
+        let key = arrayKeysTypesAnimal[indexPath.section]
+        let animalSection = dataSource[key] ?? []
+        
+        let animal = animalSection[indexPath.row]
         
         cell.animalImage.image = animal.image
         cell.animalNameLabel.text = animal.name

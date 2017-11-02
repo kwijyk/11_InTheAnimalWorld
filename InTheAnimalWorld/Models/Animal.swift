@@ -9,7 +9,8 @@
 import UIKit
 
 struct Animal {
-    let type: AnimalType
+    
+    let species: AnimalType
     let name: String
     let image: UIImage
 }
