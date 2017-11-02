@@ -59,15 +59,6 @@ class AnimalsListVC: UIViewController {
                 dataSource[typeAnimal] = [animal]
                 arrayKeysTypesAnimal.append(typeAnimal)
             }
-            
-//            arrayTempAnimals.append(animal)
-//            dataSource[typeAnimal] = arrayTempAnimals
-//
-//            if arrayKeysTypesAnimal.contains(typeAnimal) {
-//                continue
-//            } else {
-//                arrayKeysTypesAnimal.append(typeAnimal)
-//            }
         }
         //        FIXME: NOT CORRECT
        // arrayKeysTypesAnimal = Array(dataSource.keys)
