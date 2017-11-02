@@ -11,8 +11,8 @@
 		49569A991FAA689D0014BE07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49569A971FAA689D0014BE07 /* Main.storyboard */; };
 		49569A9B1FAA689D0014BE07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49569A9A1FAA689D0014BE07 /* Assets.xcassets */; };
 		49569A9E1FAA689D0014BE07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49569A9C1FAA689D0014BE07 /* LaunchScreen.storyboard */; };
-		49569AAE1FAA71ED0014BE07 /* AnimalsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49569AAD1FAA71ED0014BE07 /* AnimalsListVC.swift */; };
 		49569AB01FAA72170014BE07 /* AnimalsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49569AAF1FAA72170014BE07 /* AnimalsDetailsVC.swift */; };
+		49765A641FAB65D100F7930B /* AnimalsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49765A631FAB65D100F7930B /* AnimalsListVC.swift */; };
 		49CEC4381FAA8912009F3493 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC4371FAA8912009F3493 /* Animal.swift */; };
 		49CEC43A1FAA892B009F3493 /* AnimalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC4391FAA892B009F3493 /* AnimalType.swift */; };
 		49CEC43F1FAA8F01009F3493 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC43E1FAA8F01009F3493 /* AnimalCell.swift */; };
@@ -25,8 +25,8 @@
 		49569A9A1FAA689D0014BE07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49569A9D1FAA689D0014BE07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49569A9F1FAA689D0014BE07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49569AAD1FAA71ED0014BE07 /* AnimalsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListVC.swift; sourceTree = "<group>"; };
 		49569AAF1FAA72170014BE07 /* AnimalsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsDetailsVC.swift; sourceTree = "<group>"; };
+		49765A631FAB65D100F7930B /* AnimalsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsListVC.swift; sourceTree = "<group>"; };
 		49CEC4371FAA8912009F3493 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		49CEC4391FAA892B009F3493 /* AnimalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalType.swift; sourceTree = "<group>"; };
 		49CEC43E1FAA8F01009F3493 /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
@@ -73,8 +73,8 @@
 		49569AA91FAA703B0014BE07 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				49569AAD1FAA71ED0014BE07 /* AnimalsListVC.swift */,
 				49569AAF1FAA72170014BE07 /* AnimalsDetailsVC.swift */,
+				49765A631FAB65D100F7930B /* AnimalsListVC.swift */,
 				49569A971FAA689D0014BE07 /* Main.storyboard */,
 			);
 			path = ViewControllers;
@@ -182,8 +182,8 @@
 			files = (
 				49569AB01FAA72170014BE07 /* AnimalsDetailsVC.swift in Sources */,
 				49CEC43F1FAA8F01009F3493 /* AnimalCell.swift in Sources */,
+				49765A641FAB65D100F7930B /* AnimalsListVC.swift in Sources */,
 				49CEC4381FAA8912009F3493 /* Animal.swift in Sources */,
-				49569AAE1FAA71ED0014BE07 /* AnimalsListVC.swift in Sources */,
 				49CEC43A1FAA892B009F3493 /* AnimalType.swift in Sources */,
 				49569A941FAA689C0014BE07 /* AppDelegate.swift in Sources */,
 			);
