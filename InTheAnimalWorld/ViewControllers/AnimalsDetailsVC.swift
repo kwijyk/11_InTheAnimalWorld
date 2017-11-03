@@ -10,12 +10,20 @@ import UIKit
 
 class AnimalsDetailsVC: UIViewController {
 
+    
+    @IBOutlet private weak var ibImage: UIImageView!
+    @IBOutlet private weak var ibAnimalLabel: UILabel!
+    @IBOutlet private weak var ibSpeciesLabel: UILabel!
+    
+    var animal: Animal?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        title = animal?.name
+        
+        ibImage.image = animal?.image
+        ibAnimalLabel.text = animal?.name
+        ibSpeciesLabel.text = animal?.species.type
     }
-
-    
-    
 }

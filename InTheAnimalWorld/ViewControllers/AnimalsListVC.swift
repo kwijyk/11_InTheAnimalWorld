@@ -23,15 +23,19 @@ class AnimalsListVC: UIViewController {
         
         title = "Animals"
         
+        setupTableView()
+        generateAnimals()
+    }
+    
+     //MARK: - TableView configuration
+    private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-    
-        generateAnimals()
     }
     
     //MARK: - Animal
 
-    func generateAnimals() {
+   private func generateAnimals() {
         
         arrayAnimals.append(Animal(species: AnimalType(type:"Bird"), name:"Stork", image:#imageLiteral(resourceName: "Stork")))
         arrayAnimals.append(Animal(species: AnimalType(type:"Bird"), name:"Albatross", image:#imageLiteral(resourceName: "Albatross")))
@@ -66,6 +70,20 @@ class AnimalsListVC: UIViewController {
         let animalSection = dataSource[key]
         
         return animalSection?[indexPath.row]
+    }
+    
+    //MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard segue.identifier == "AnimalsDetailsVC",
+        let animalsDetailsVC = segue.destination as? AnimalsDetailsVC else { return }
+        guard let cell = sender as? UITableViewCell else { return }
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        let animal = getAnimal(for: indexPath)
+        
+        animalsDetailsVC.animal = animal
     }
 }
 
