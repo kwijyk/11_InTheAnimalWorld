@@ -8,7 +8,16 @@
 
 import Foundation
 
+enum TypeAnimals: String {
+    
+    case Bird = "Bird"
+    case Fish = "Fish"
+    case Insect = "Insect"
+    case Beast = "Beast"
+}
+
 struct AnimalType {
     
-    let type: String
+    let type: TypeAnimals
+    var arrayAnimals:[Animal] = []
 }

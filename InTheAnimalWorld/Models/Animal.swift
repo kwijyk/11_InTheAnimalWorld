@@ -10,7 +10,6 @@ import UIKit
 
 struct Animal {
    
-    let species: AnimalType
     let name: String
     let image: UIImage
 }

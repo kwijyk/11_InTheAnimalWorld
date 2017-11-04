@@ -15,6 +15,7 @@ class AnimalsDetailsVC: UIViewController {
     @IBOutlet private weak var ibAnimalLabel: UILabel!
     @IBOutlet private weak var ibSpeciesLabel: UILabel!
     
+    var tipeAnimal: String?
     var animal: Animal?
     
     override func viewDidLoad() {
@@ -24,6 +25,6 @@ class AnimalsDetailsVC: UIViewController {
         
         ibImage.image = animal?.image
         ibAnimalLabel.text = animal?.name
-        ibSpeciesLabel.text = animal?.species.type
+        ibSpeciesLabel.text = tipeAnimal
     }
 }

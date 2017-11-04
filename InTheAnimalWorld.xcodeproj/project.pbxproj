@@ -16,6 +16,7 @@
 		49CEC4381FAA8912009F3493 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC4371FAA8912009F3493 /* Animal.swift */; };
 		49CEC43A1FAA892B009F3493 /* AnimalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC4391FAA892B009F3493 /* AnimalType.swift */; };
 		49CEC43F1FAA8F01009F3493 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC43E1FAA8F01009F3493 /* AnimalCell.swift */; };
+		49DA50A01FAD2B6300D33A39 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA509F1FAD2B6300D33A39 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		49CEC4371FAA8912009F3493 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		49CEC4391FAA892B009F3493 /* AnimalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalType.swift; sourceTree = "<group>"; };
 		49CEC43E1FAA8F01009F3493 /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
+		49DA509F1FAD2B6300D33A39 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,9 @@
 		49CEC4341FAA884D009F3493 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				49CEC4371FAA8912009F3493 /* Animal.swift */,
+				49DA509F1FAD2B6300D33A39 /* DataManager.swift */,
 				49CEC4391FAA892B009F3493 /* AnimalType.swift */,
+				49CEC4371FAA8912009F3493 /* Animal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				49CEC43F1FAA8F01009F3493 /* AnimalCell.swift in Sources */,
 				49765A641FAB65D100F7930B /* AnimalsListVC.swift in Sources */,
 				49CEC4381FAA8912009F3493 /* Animal.swift in Sources */,
+				49DA50A01FAD2B6300D33A39 /* DataManager.swift in Sources */,
 				49CEC43A1FAA892B009F3493 /* AnimalType.swift in Sources */,
 				49569A941FAA689C0014BE07 /* AppDelegate.swift in Sources */,
 			);
